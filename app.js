@@ -36,8 +36,7 @@ form.addEventListener("submit", async function (e) {
     pokeDescribeTwo,
     pokeDescribeThree
   );
-  pokeContainer.appendChild.pokeDiv;
-});
+ 
 
 function clearBox(pokeContainer)
 {
