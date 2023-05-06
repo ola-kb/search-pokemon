@@ -6,6 +6,7 @@ const pokeUrl =
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
+  
   const searchText = form.elements.query.value;
   const res = await axios.get(
     `https://pokeapi.co/api/v2/pokemon-species/${searchText}/`
@@ -24,10 +25,10 @@ form.addEventListener("submit", async function (e) {
   if (res.data.form_descriptions.length > 0) {
     pokeDescribeTwo.innerText = `DESCRIBE: ${res.data.form_descriptions[0].description}`;
   }
-
+  
   let pokeImage = document.createElement("img");
   pokeImage.src = `${pokeUrl}${searchText}.svg`;
-
+  
   pokeDiv.append(
     pokeImage,
     pokeName,
@@ -36,10 +37,11 @@ form.addEventListener("submit", async function (e) {
     pokeDescribeTwo,
     pokeDescribeThree
   );
- 
+  
+   
+});
 
-function clearBox(pokeContainer)
-{
-    document.getElementById('pokeContainer').innerHTML = "";
-   document.location.reload();
+function clearBox(pokeContainer) {
+  document.getElementById('pokeContainer').innerHTML = "";
+  document.location.reload();
 }
